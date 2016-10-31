@@ -1,0 +1,176 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+
+      function drawVisualization() {
+            // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([["Algorithms", "Descartes", "Seneca", "Rousseau", "Nietzsche", "Hobbes", "Average"], ["ChandyMisra", 1047, 1049, 1049, 1049, 1043, 1047.4], ["ResourceHierarchy", 190, 190, 188, 190, 189, 189.4], ["Waiter", 119, 131, 131, 130, 118, 125.8]]);
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0,
+          1,
+          {
+            calc: "stringify",
+            sourceColumn: 1, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          2,
+          {
+            calc: "stringify",
+            sourceColumn: 2, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          3,
+          {
+            calc: "stringify",
+            sourceColumn: 3, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          4,
+          {
+            calc: "stringify",
+            sourceColumn: 4, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          5,
+          {
+            calc: "stringify",
+            sourceColumn: 5, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          6
+          ])
+
+        var options = {
+          title : 'Média de vezes que um filósofo foi bloqueado',
+          vAxis: {title: '# Bloqueio'},
+          hAxis: {title: 'Algoritmo'},
+          seriesType: 'bars',
+          series: {
+            5: {
+              type: 'line'
+            }
+          }
+        };
+
+        var chart = new google.visualization.ChartWrapper({
+            chartType: 'ColumnChart',
+            containerId: 'chart_div1',
+            dataTable: view,
+            options: options
+        });
+
+
+
+        // Wait for the chart to finish drawing before calling the getImageURI() method.
+        google.visualization.events.addListener(chart, 'ready', function () {
+          debugger;
+          chart_div1.innerHTML = '<img src="' + chart.getChart().getImageURI() + '">';
+          console.log(chart_div1.innerHTML);
+        });
+
+        chart.draw();
+      }
+    </script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+
+      function drawVisualization() {
+            // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([["Algorithms", "Descartes", "Seneca", "Rousseau", "Nietzsche", "Hobbes", "Average"], ["ChandyMisra", 1062, 1062, 1065, 1068, 1062, 1063.8], ["ResourceHierarchy", 122, 110, 122, 111, 123, 117.6], ["Waiter", 125, 124, 136, 111, 112, 121.6]]);
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0,
+          1,
+          {
+            calc: "stringify",
+            sourceColumn: 1, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          2,
+          {
+            calc: "stringify",
+            sourceColumn: 2, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          3,
+          {
+            calc: "stringify",
+            sourceColumn: 3, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          4,
+          {
+            calc: "stringify",
+            sourceColumn: 4, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          5,
+          {
+            calc: "stringify",
+            sourceColumn: 5, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          6
+          ])
+
+        var options = {
+          title : 'Média de vezes que um filósofo foi bloqueado',
+          vAxis: {title: '# Bloqueio'},
+          hAxis: {title: 'Algoritmo'},
+          seriesType: 'bars',
+          series: {
+            5: {
+              type: 'line'
+            }
+          }
+        };
+
+        var chart = new google.visualization.ChartWrapper({
+            chartType: 'ColumnChart',
+            containerId: 'chart_div2',
+            dataTable: view,
+            options: options
+        });
+
+
+
+        // Wait for the chart to finish drawing before calling the getImageURI() method.
+        google.visualization.events.addListener(chart, 'ready', function () {
+          debugger;
+          chart_div2.innerHTML = '<img src="' + chart.getChart().getImageURI() + '">';
+          console.log(chart_div2.innerHTML);
+        });
+
+        chart.draw();
+      }
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <div id="chart_div1" style="width: 1300px; height: 500px;"></div>
+      </li>
+      <li>
+        <div id="chart_div2" style="width: 1300px; height: 500px;"></div>
+      </li>
+    </ul>
+  </body>
+</html>

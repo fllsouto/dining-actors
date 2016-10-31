@@ -1,0 +1,176 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+
+      function drawVisualization() {
+            // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([["Algorithms", "Descartes", "Seneca", "Rousseau", "Nietzsche", "Hobbes", "Average"], ["ChandyMisra", 14.003488721804498, 20.74957462686568, 20.920766917293253, 17.899751879699238, 18.02217293233083, 18.3191510155987], ["ResourceHierarchy", 23.043045977011484, 7.765716763005765, 24.81092783505153, 11.191568181818178, 16.992008333333334, 16.760653418044058], ["Waiter", 4.3722611464968075, 19.60243076923076, 11.819516556291388, 14.205605263157878, 43.011532258064506, 18.60226919864827]]);
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0,
+          1,
+          {
+            calc: "stringify",
+            sourceColumn: 1, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          2,
+          {
+            calc: "stringify",
+            sourceColumn: 2, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          3,
+          {
+            calc: "stringify",
+            sourceColumn: 3, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          4,
+          {
+            calc: "stringify",
+            sourceColumn: 4, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          5,
+          {
+            calc: "stringify",
+            sourceColumn: 5, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          6
+          ])
+
+        var options = {
+          title : 'Tempo médio de esperar para comer',
+          vAxis: {title: 'Tempo (s)'},
+          hAxis: {title: 'Algoritmo'},
+          seriesType: 'bars',
+          series: {
+            5: {
+              type: 'line'
+            }
+          }
+        };
+
+        var chart = new google.visualization.ChartWrapper({
+            chartType: 'ColumnChart',
+            containerId: 'chart_div1',
+            dataTable: view,
+            options: options
+        });
+
+
+
+        // Wait for the chart to finish drawing before calling the getImageURI() method.
+        google.visualization.events.addListener(chart, 'ready', function () {
+          debugger;
+          chart_div1.innerHTML = '<img src="' + chart.getChart().getImageURI() + '">';
+          console.log(chart_div1.innerHTML);
+        });
+
+        chart.draw();
+      }
+    </script>
+        <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+
+      function drawVisualization() {
+            // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([["Algorithms", "Descartes", "Seneca", "Rousseau", "Nietzsche", "Hobbes", "Average"], ["ChandyMisra", 10.079794117647085, 5.135935294117652, 11.06391764705884, 11.034900584795336, 14.099817647058819, 10.282873058135547], ["ResourceHierarchy", 16.568149122807, 10.849968152866227, 9.307048387096756, 15.694351999999975, 11.006341463414621, 12.685171825236916], ["Waiter", 27.073833333333333, 7.395724770642194, 14.562059259259252, 11.337440993788796, 11.032419354838698, 14.280295542372453]]);
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0,
+          1,
+          {
+            calc: "stringify",
+            sourceColumn: 1, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          2,
+          {
+            calc: "stringify",
+            sourceColumn: 2, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          3,
+          {
+            calc: "stringify",
+            sourceColumn: 3, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          4,
+          {
+            calc: "stringify",
+            sourceColumn: 4, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          5,
+          {
+            calc: "stringify",
+            sourceColumn: 5, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          6
+          ])
+
+        var options = {
+          title : 'Tempo médio de esperar para comer',
+          vAxis: {title: 'Tempo (s)'},
+          hAxis: {title: 'Algoritmo'},
+          seriesType: 'bars',
+          series: {
+            5: {
+              type: 'line'
+            }
+          }
+        };
+
+        var chart = new google.visualization.ChartWrapper({
+            chartType: 'ColumnChart',
+            containerId: 'chart_div2',
+            dataTable: view,
+            options: options
+        });
+
+
+
+        // Wait for the chart to finish drawing before calling the getImageURI() method.
+        google.visualization.events.addListener(chart, 'ready', function () {
+          debugger;
+          chart_div2.innerHTML = '<img src="' + chart.getChart().getImageURI() + '">';
+          console.log(chart_div2.innerHTML);
+        });
+
+        chart.draw();
+      }
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <div id="chart_div1" style="width: 1300px; height: 500px;"></div>
+      </li>
+      <li>
+        <div id="chart_div2" style="width: 1300px; height: 500px;"></div>
+      </li>
+    </ul>
+  </body>
+</html>

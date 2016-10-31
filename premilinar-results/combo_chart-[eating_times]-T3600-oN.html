@@ -1,0 +1,175 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+
+      function drawVisualization() {
+            // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([["Algorithms", "Descartes", "Seneca", "Rousseau", "Nietzsche", "Hobbes", "Average"], ["ChandyMisra", 170, 170, 170, 171, 170, 170.2], ["ResourceHierarchy", 114, 157, 186, 125, 123, 141.0], ["Waiter", 78, 218, 135, 161, 155, 149.4]]);
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0,
+          1,
+          {
+            calc: "stringify",
+            sourceColumn: 1, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          2,
+          {
+            calc: "stringify",
+            sourceColumn: 2, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          3,
+          {
+            calc: "stringify",
+            sourceColumn: 3, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          4,
+          {
+            calc: "stringify",
+            sourceColumn: 4, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          5,
+          {
+            calc: "stringify",
+            sourceColumn: 5, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          6
+          ])
+
+        var options = {
+          title : 'Média de vezes que um filósofo comeu',
+          vAxis: {title: '# Comeu'},
+          hAxis: {title: 'Algoritmo'},
+          seriesType: 'bars',
+          series: {
+            5: {
+              type: 'line'
+            }
+          }
+        };
+
+        var chart = new google.visualization.ChartWrapper({
+            chartType: 'ColumnChart',
+            containerId: 'chart_div1',
+            dataTable: view,
+            options: options
+        });
+
+
+
+        // Wait for the chart to finish drawing before calling the getImageURI() method.
+        google.visualization.events.addListener(chart, 'ready', function () {
+          debugger;
+          chart_div1.innerHTML = '<img src="' + chart.getChart().getImageURI() + '">';
+          console.log(chart_div1.innerHTML);
+        });
+
+        chart.draw();
+      }
+    </script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+
+      function drawVisualization() {
+            // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([["Algorithms", "Descartes", "Seneca", "Rousseau", "Nietzsche", "Hobbes", "Average"], ["ChandyMisra", 133, 134, 133, 133, 133, 133.2], ["ResourceHierarchy", 87, 173, 97, 132, 120, 121.8], ["Waiter", 314, 130, 151, 114, 62, 154.2]]);
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0,
+          1,
+          {
+            calc: "stringify",
+            sourceColumn: 1, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          2,
+          {
+            calc: "stringify",
+            sourceColumn: 2, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          3,
+          {
+            calc: "stringify",
+            sourceColumn: 3, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          4,
+          {
+            calc: "stringify",
+            sourceColumn: 4, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          5,
+          {
+            calc: "stringify",
+            sourceColumn: 5, // Create an annotation column with source column "1"
+            type: "string",
+            role: "annotation"
+          },
+          6
+          ])
+
+        var options = {
+          title : 'Média de vezes que um filósofo comeu',
+          vAxis: {title: '# Comeu'},
+          hAxis: {title: 'Algoritmo'},
+          seriesType: 'bars',
+          series: {
+            5: {
+              type: 'line'
+            }
+          }
+        };
+
+        var chart = new google.visualization.ChartWrapper({
+            chartType: 'ColumnChart',
+            containerId: 'chart_div2',
+            dataTable: view,
+            options: options
+        });
+
+
+
+        // Wait for the chart to finish drawing before calling the getImageURI() method.
+        google.visualization.events.addListener(chart, 'ready', function () {
+          debugger;
+          chart_div2.innerHTML = '<img src="' + chart.getChart().getImageURI() + '">';
+          console.log(chart_div2.innerHTML);
+        });
+
+        chart.draw();
+      }
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <div id="chart_div1" style="width: 1300px; height: 500px;"></div>
+      </li>
+      <li>
+        <div id="chart_div2" style="width: 1300px; height: 500px;"></div>
+      </li>
+    </ul>  </body>
+</html>
